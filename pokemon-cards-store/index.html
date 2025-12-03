@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Cards Store - Premium Trading Cards</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>⚡ PokéCards Store</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html" class="active">Store</a></li>
+                        <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+                        <li><a href="admin.html">Admin</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Premium Pokemon Trading Cards</h2>
+            <p>Discover rare and valuable Pokemon cards with competitive pricing</p>
+        </div>
+    </section>
+
+    <!-- Search and Filter -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search for Pokemon cards...">
+                <button id="search-btn">Search</button>
+            </div>
+            <div class="filter-options">
+                <select id="sort-select">
+                    <option value="name-asc">Name (A-Z)</option>
+                    <option value="name-desc">Name (Z-A)</option>
+                    <option value="price-asc">Price (Low to High)</option>
+                    <option value="price-desc">Price (High to Low)</option>
+                    <option value="stock-desc">Stock (High to Low)</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-section">
+        <div class="container">
+            <div id="products-grid" class="products-grid">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+            <div id="no-products" class="no-products" style="display: none;">
+                <p>No products found matching your search.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 PokéCards Store. All rights reserved.</p>
+            <p>Market prices provided by TCGPlayer and other sources</p>
+        </div>
+    </footer>
+
+    <!-- Product Modal -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modal-img" src="" alt="">
+                </div>
+                <div class="modal-details">
+                    <h2 id="modal-name"></h2>
+                    <p id="modal-description"></p>
+                    <div class="price-section">
+                        <div class="store-price">
+                            <span class="label">Our Price:</span>
+                            <span id="modal-price" class="price"></span>
+                        </div>
+                        <div class="market-price">
+                            <span class="label">Market Price:</span>
+                            <span id="modal-market-price" class="price"></span>
+                            <span id="modal-savings" class="savings"></span>
+                        </div>
+                    </div>
+                    <div class="stock-info">
+                        <span id="modal-stock"></span>
+                    </div>
+                    <div class="market-link">
+                        <a id="modal-market-link" href="#" target="_blank" class="btn-secondary">
+                            View on <span id="modal-market-source"></span>
+                        </a>
+                    </div>
+                    <div class="quantity-selector">
+                        <label for="modal-quantity">Quantity:</label>
+                        <input type="number" id="modal-quantity" value="1" min="1">
+                    </div>
+                    <button id="modal-add-to-cart" class="btn-primary">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="js/data.js"></script>
+    <script src="js/store.js"></script>
+</body>
+</html>
